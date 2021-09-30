@@ -1,9 +1,11 @@
 import React from "react";
 import Notification from "./notification/Notification";
+import PropTypes from "prop-types";
+import {ul} from './Statistics.module.css'
 
 const Statistics = ({ state, total, percentage }) => {
   return (
-    <ul>
+    <ul className={ul}>
       {total() ? (
         <>
           {state.map((item) => (
@@ -20,5 +22,11 @@ const Statistics = ({ state, total, percentage }) => {
     </ul>
   );
 };
+
+Statistics.propTypes = {
+  state: PropTypes.array.isRequired,
+  total: PropTypes.func.isRequired,
+  percentage: PropTypes.func.isRequired
+}
 
 export default Statistics;
