@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ul, li, button} from './Feedback.module.css'
+import { ul, li, button } from './Feedback.module.css';
 
-const fbChoice = ["good", "neutral", "bad"]
-
-const FeedbackOptions = ({leaveFeedback}) => {
+const FeedbackOptions = ({leaveFeedback, fbOptions}) => {
     return (
         <ul className={ul}>
-            {fbChoice.map(item => 
+            {fbOptions.map(item => 
                     <li className={li}>
                     <button className={button} onClick={() => leaveFeedback(item)}>{item}</button>
                     </li>
